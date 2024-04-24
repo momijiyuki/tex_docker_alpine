@@ -1,5 +1,13 @@
 {
-
+    "[markdown]": {
+        // "editor.wordWrap": "on",
+        "editor.quickSuggestions": {
+            "other": "on",
+            "comments": "off",
+            "strings": "off"
+        },
+        "editor.snippetSuggestions": "top",
+    },
     "[latex]": {
         "editor.tabSize": 2,
         "editor.insertSpaces": true

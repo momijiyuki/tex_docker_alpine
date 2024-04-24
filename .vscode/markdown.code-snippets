@@ -1,0 +1,22 @@
+{
+	// https://aadojo.alterbooth.com/entry/2023/01/16/110000
+	"figure":{
+        "scope": "markdown",
+		"prefix": "figure",
+		"body": [
+			"<div style=\"text-align: center\">",
+			"\t<img src=\"$1\" width=\"100%\" height=\"100%\">",
+			"\t<figcaption>タイトル名</figcaption>",
+			"</div>"
+		],
+		"description": "incert picture by html"
+	},
+	"comment":{
+        "scope": "markdown",
+		"prefix": "comment",
+		"body": [
+			"<span style=\"color:#00bbf0;\">$1</span>"
+		],
+		"description": "comment out blue(#00bbf0) color"
+	}
+}
