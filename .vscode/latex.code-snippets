@@ -20,7 +20,6 @@
             "\\documentclass[dvipdfmx]{jsarticle}",
             "% \\usepackage{subfigure}",
             "\\usepackage{graphicx}",
-            "\\usepackage{listings,jvlisting}",
             "\\usepackage{multicol}",
             "\\usepackage{float}",
             "\\usepackage{circuitikz}",
@@ -29,6 +28,8 @@
             "\\usepackage{arydshln}",
             "\\usepackage{wrapfig}",
             "\\usepackage{url}",
+            "\\usepackage{amsmath}",
+            "\\usepackage{mathtools}",
             "",
             "",
             "\\begin{document}",
@@ -45,6 +46,8 @@
         "scope": "latex",
         "prefix": "sourcein",
         "body": [
+            "\\usepackage{listings,jvlisting}",
+
             "\\lstset{",
             "\tbasicstyle={\\ttfamily},",
             "\tidentifierstyle={\\small},",

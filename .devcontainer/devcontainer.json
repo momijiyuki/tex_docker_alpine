@@ -4,8 +4,8 @@
 	"runArgs": ["--init"],
 
     "mounts": [
-        // "source=${localEnv:HOME}/.ssh/,target=/root/.ssh/,type=bind,consistency=cached",
-        // "source=${localEnv:HOME}/.gitconfig,target=/root/.gitconfig,type=bind,consistency=cached"
+        "source=${localEnv:HOME}/.ssh/,target=/root/.ssh/,type=bind,consistency=cached",
+        "source=${localEnv:HOME}/.gitconfig,target=/root/.gitconfig,type=bind,consistency=cached"
     ],
 	"customizations": {
 		"vscode": {
@@ -24,7 +24,8 @@
 				"yzhang.markdown-all-in-one",
 				"yzane.markdown-pdf",
 				"shd101wyy.markdown-preview-enhanced",
-				"James-Yu.latex-workshop"
+				"James-Yu.latex-workshop",
+				"mhutchie.git-graph"
 			]
 	  	}
 	}
