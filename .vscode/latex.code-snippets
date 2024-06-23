@@ -42,7 +42,7 @@
             "\\end{document}"
         ]
     },
-    "sourcecord": {
+    "sourcecode": {
         "scope": "latex",
         "prefix": "sourcein",
         "body": [
