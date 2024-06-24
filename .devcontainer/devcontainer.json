@@ -1,19 +1,19 @@
 {
-	"name": "latex_test",
+	"name": "tex-alpine",
 	"build": { "dockerfile": "Dockerfile" },
-	"runArgs": ["--init"],
+	"runArgs": ["--init", "--name", "latex_alpine"],
 
-    "mounts": [
-        "source=${localEnv:HOME}/.ssh/,target=/root/.ssh/,type=bind,consistency=cached",
-        "source=${localEnv:HOME}/.gitconfig,target=/root/.gitconfig,type=bind,consistency=cached"
-    ],
+	"mounts": [
+		"source=${localEnv:HOME}/.ssh/,target=/root/.ssh/,type=bind,consistency=cached",
+		"source=${localEnv:HOME}/.gitconfig,target=/root/.gitconfig,type=bind,consistency=cached"
+	],
 	"customizations": {
 		"vscode": {
 			"settings": {
-                "diffEditor.ignoreTrimWhitespace": false,
+				"diffEditor.ignoreTrimWhitespace": false,
 				"explorer.openEditors.visible": 0,
-                "files.insertFinalNewline": true,
-                "files.trimTrailingWhitespace": true,
+				"files.insertFinalNewline": true,
+				"files.trimTrailingWhitespace": true,
 				"markdown-preview-enhanced.scrollSync": false,
 				"workbench.view.alwaysShowHeaderActions": true,
 				"workbench.tree.enableStickyScroll": false,
@@ -28,6 +28,6 @@
 				"mhutchie.git-graph",
 				"tomoki1207.pdf"
 			]
-	  	}
+		}
 	}
 }
