@@ -1,0 +1,43 @@
+\documentclass[dvipdfmx]{jsreport}
+\usepackage{amssymb}
+\usepackage{url}
+\usepackage{listings,jvlisting}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+\lstset{
+  basicstyle={\ttfamily},
+  identifierstyle={\small},
+  commentstyle={\smallitshape},
+  keywordstyle={\small\bfseries},
+  ndkeywordstyle={\small},
+  stringstyle={\small\ttfamily},
+  frame={tb},
+  breaklines=true,
+  % columns=[l]{fullflexible},
+  columns=fixed,
+  basewidth=0.5em,
+  numbers=left,
+  xrightmargin=0zw,
+  xleftmargin=3zw,
+  numberstyle={\scriptsize},
+  stepnumber=1,
+  numbersep=1zw,
+  lineskip=-0.5ex
+}
+\renewcommand{\lstlistingname}{ソースコード}
+
+\begin{document}
+\title{たいとる}
+\date{\today}
+\author{}
+\maketitle
+
+\input{chapter/chapter1.tex}
+
+\newpage
+\bibliographystyle{jplain}
+\bibliography{ref}
+\end{document}
