@@ -1,6 +1,8 @@
 # tex_docker_alpine
 devcontainer for texlive
-[tex_docker](https://github.com/momijiyuki/tex_docker)をベースにAlpine Linuxに変更
+
+Alpine Linuxをベースとした LaTeXの実行環境 (2024/9/20: arm版macに対応)
+
 
 ## 使用したコレクション
 

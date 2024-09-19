@@ -126,9 +126,9 @@
             "% https://qiita.com/zr_tex8r/items/71ae46c9c4e8cb575073",
             "\\newcommand{\\secnum}{",
             "\t\\ifthenelse{\\value{subsection} > 0}{",
-            "\t\t3.{\\thesection}.\\thesubsection \\subsecname",
+            "\t\t{\\thesection}.\\thesubsection \\subsecname",
             "\t}{",
-            "\t\t3.{\\thesection} \\secname",
+            "\t\t{\\thesection} \\secname",
             "\t}",
             "}",
             "",
@@ -138,6 +138,7 @@
             "\\begin{document}",
             "\\title{$1}",
             "\\subtitle{}",
+            "\\date{}",
             "\\maketitle",
             "\\metroset{block=fill}",
             "$2",
@@ -146,6 +147,15 @@
         "description": [
             "beamerでのスライド作成\n",
             "スタイルはmetropolis"
+        ]
+    },
+    "beamer frame":{
+        "scope": "latex",
+        "prefix": "frame",
+        "body": [
+            "\\begin{frame}{\\secnum}",
+            "\t$0",
+            "\\end{frame}"
         ]
     }
 }
