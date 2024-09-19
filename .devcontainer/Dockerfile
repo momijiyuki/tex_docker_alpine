@@ -48,11 +48,8 @@ RUN if [ "$(uname -m)" = "aarch64" ]; then \
         curl -L -o /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub && \
         curl -sLO https://github.com/sgerrand/alpine-pkg-glibc/releases/download/${GLIBC_VERSION}/glibc-${GLIBC_VERSION}.apk && \
         curl -sLO https://github.com/sgerrand/alpine-pkg-glibc/releases/download/${GLIBC_VERSION}/glibc-bin-${GLIBC_VERSION}.apk && \
-        apk --no-cache add xz \
-        glibc-2.34-r0.apk && \
-
-        apk add --no-cache \
-        xz \
+        apk add --no-cache --force-overwrite \
+        xz\
         glibc-${GLIBC_VERSION}.apk \
         glibc-bin-${GLIBC_VERSION}.apk && \
         rm glibc-${GLIBC_VERSION}.apk && \
