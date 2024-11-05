@@ -11,7 +11,6 @@
 		"vscode": {
 			"settings": {
 				"diffEditor.ignoreTrimWhitespace": false,
-				"explorer.openEditors.visible": 0,
 				"files.insertFinalNewline": true,
 				"files.trimTrailingWhitespace": true,
 				"markdown-preview-enhanced.scrollSync": false,
