@@ -157,5 +157,10 @@
             "\t$0",
             "\\end{frame}"
         ]
+    },
+    "comment":{
+        "scope": "latex",
+        "prefix": "comment",
+        "body": "\\textcolor{${1|cyan,orange|}}{$2}"
     }
 }

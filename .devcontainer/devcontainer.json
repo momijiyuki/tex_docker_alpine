@@ -1,12 +1,17 @@
 {
 	"name": "tex-alpine",
-	"build": { "dockerfile": "Dockerfile" },
-	"runArgs": ["--init", "--name", "latex_alpine"],
+	"build": {
+		"dockerfile": "Dockerfile",
+		"args": {
+			"TEX_VERSION": "2024"
+		}
+	},
+	"runArgs": ["--init", "--name", "latex_alpine", "--dns", "8.8.8.8", "--dns", "8.8.4.4"],
 
-	"mounts": [
-		"source=${localEnv:HOME}/.ssh/,target=/root/.ssh/,type=bind,consistency=cached",
-		"source=${localEnv:HOME}/.gitconfig,target=/root/.gitconfig,type=bind,consistency=cached"
-	],
+	// "mounts": [
+	// 	"source=${localEnv:HOME}/.ssh/,target=/root/.ssh/,type=bind,consistency=cached",
+	// 	"source=${localEnv:HOME}/.gitconfig,target=/root/.gitconfig,type=bind,consistency=cached"
+	// ],
 	"customizations": {
 		"vscode": {
 			"settings": {

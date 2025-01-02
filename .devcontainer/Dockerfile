@@ -1,12 +1,11 @@
 ARG TEX_VERSION=2024
 
-FROM amd64/alpine:3.19 AS builder
+FROM amd64/alpine:3.19.3 AS builder
 
 ARG TEX_VERSION
 
 RUN mkdir -p /root/workspace
 COPY texlive.profile /root/workspace
-COPY tex_requires /root/workspace
 WORKDIR /root/workspace
 
 RUN apk --no-cache add \
@@ -17,12 +16,10 @@ RUN apk --no-cache add \
     mkdir install-tl && \
     tar xzf install-tl-unx.tar.gz -C install-tl --strip-components 1 && \
     ./install-tl/install-tl --profile texlive.profile && \
-    rm -r install-tl install-tl-unx.tar.gz && \
-    cat tex_requires | grep -v "^#" | \
-    xargs /usr/local/texlive/${TEX_VERSION}/bin/x86_64-linux/tlmgr install
+    rm -r install-tl install-tl-unx.tar.gz
 
 
-FROM alpine:3.19
+FROM alpine:3.19.3
 
 ARG TEX_VERSION
 ARG GLIBC_VERSION=2.34-r0
@@ -31,6 +28,9 @@ ARG GLIBC_VERSION=2.34-r0
 COPY --from=multiarch/qemu-user-static:latest /usr/bin/qemu-aarch64-static /usr/bin/
 COPY --from=builder /usr/local/texlive/ /usr/local/texlive/
 COPY .latexmkrc /root
+COPY tex_requires /root
+
+WORKDIR /root
 
 ENV PS1='\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ ' \
     PATH="/usr/local/texlive/${TEX_VERSION}/bin/x86_64-linux:${PATH}"
@@ -41,6 +41,8 @@ RUN apk --no-cache add \
     curl \
     tree \
     perl \
+    # openssl \
+    # ca-certificates \
     openssh-client &&\
     echo "PS1='"${PS1}"'" > ~/.profile
 
@@ -57,4 +59,6 @@ RUN if [ "$(uname -m)" = "aarch64" ]; then \
         rm -rf /var/cache/apk/*; \
     else \
         apk add --no-cache libc6-compat; \
-    fi
+    fi && \
+    cat tex_requires | grep -v "^#" | \
+    xargs /usr/local/texlive/${TEX_VERSION}/bin/x86_64-linux/tlmgr install
