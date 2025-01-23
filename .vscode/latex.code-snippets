@@ -162,5 +162,10 @@
         "scope": "latex",
         "prefix": "comment",
         "body": "\\textcolor{${1|cyan,orange|}}{$2}"
+    },
+    "line break":{
+        "scope": "latex",
+        "prefix": "lineskip",
+        "body": "\\vskip\\baselineskip"
     }
 }
