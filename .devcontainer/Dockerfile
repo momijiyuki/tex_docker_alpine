@@ -60,5 +60,6 @@ RUN if [ "$(uname -m)" = "aarch64" ]; then \
     else \
         apk add --no-cache libc6-compat; \
     fi && \
+    /usr/local/texlive/${TEX_VERSION}/bin/x86_64-linux/tlmgr update --self && \
     cat tex_requires | grep -v "^#" | \
     xargs /usr/local/texlive/${TEX_VERSION}/bin/x86_64-linux/tlmgr install
