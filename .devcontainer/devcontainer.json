@@ -3,7 +3,7 @@
 	"build": {
 		"dockerfile": "Dockerfile",
 		"args": {
-			"TEX_VERSION": "2025"
+			"TEX_VERSION": "2026"
 		}
 	},
 	"runArgs": ["--init", "--name", "latex_alpine", "--dns", "8.8.8.8", "--dns", "8.8.4.4"],
